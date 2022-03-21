@@ -11,4 +11,5 @@ public class Anime {
     private String name;
     private Date startDate;
     private Date endDate;
+    private int rating;
 }

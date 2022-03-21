@@ -12,4 +12,5 @@ public class Author {
     private String firstName;
     private String lastName;
     private Date birthDate;
+    private int age;
 }
