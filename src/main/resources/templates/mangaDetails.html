@@ -13,6 +13,40 @@
 
 <div th:replace="fragments/header :: header">Header</div>
 
+<div class="row1">
+    <div class="row1content" th:if="${manga}">
+        <div class="prevButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/mangadetails/${manga.getId()}/prev|}">prev</a>
+        </div>
+        <div class="nextButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/mangadetails/${manga.getId()}/next|}">next</a>
+        </div>
+
+        <h2 th:text="${manga.getName()}"></h2>
+
+        <div class="partyinfo">
+            <div class="infoline">
+                <div class="infoLineName">First released:</div>
+                <div class="infoLinevalue" th:text="${manga.getReleaseDate()}"></div>
+            </div>
+            <div class="infoline">
+                <div class="infoLineName">Final release:</div>
+                <div class="infoLinevalue" th:text="(${manga.getEndDate()} != null) ? ${manga.getEndDate()}:'new volumes are still being released'"></div>
+            </div>
+        </div>
+    </div>
+    <!--    <div>-->
+    <!--        <h2>line up:</h2>-->
+    <!--        <div th:each="artist : ${party.getArtists()}">-->
+    <!--            <a class="buttonLook mediumButton" th:text="${artist.getArtistName()}" th:href="@{|/artistdetails/${artist.getId()}|}"></a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div class="row1content" th:unless="${manga}">
+        <p>No manga was chosen</p>
+    </div>
+</div>
+
 <div th:replace="fragments/footer :: footer">Footer</div>
 
 </body>
