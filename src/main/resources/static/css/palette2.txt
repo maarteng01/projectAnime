@@ -1,0 +1,25 @@
+/* Coolors Exported Palette - https://coolors.co/81717a-9d8ca1-9993b2-a7abdd-b4d4ee */
+
+/* CSV */
+81717a,9d8ca1,9993b2,a7abdd,b4d4ee
+
+/* With # */
+#81717a, #9d8ca1, #9993b2, #a7abdd, #b4d4ee
+
+/* Array */
+["81717a","9d8ca1","9993b2","a7abdd","b4d4ee"]
+
+/* Object */
+{"Old Lavender":"81717a","Heliotrope Gray":"9d8ca1","Cool Grey":"9993b2","Maximum Blue Purple":"a7abdd","Beau Blue":"b4d4ee"}
+
+/* Extended Array */
+[{"name":"Old Lavender","hex":"81717a","rgb":[129,113,122],"cmyk":[0,12,5,49],"hsb":[326,12,51],"hsl":[326,7,47],"lab":[49,8,-3]},{"name":"Heliotrope Gray","hex":"9d8ca1","rgb":[157,140,161],"cmyk":[2,13,0,37],"hsb":[289,13,63],"hsl":[289,10,59],"lab":[60,10,-9]},{"name":"Cool Grey","hex":"9993b2","rgb":[153,147,178],"cmyk":[14,17,0,30],"hsb":[252,17,70],"hsl":[252,17,64],"lab":[62,9,-15]},{"name":"Maximum Blue Purple","hex":"a7abdd","rgb":[167,171,221],"cmyk":[24,23,0,13],"hsb":[236,24,87],"hsl":[236,44,76],"lab":[71,9,-26]},{"name":"Beau Blue","hex":"b4d4ee","rgb":[180,212,238],"cmyk":[24,11,0,7],"hsb":[207,24,93],"hsl":[207,63,82],"lab":[83,-5,-16]}]
+
+/* XML */
+<palette>
+  <color name="Old Lavender" hex="81717a" r="129" g="113" b="122" />
+  <color name="Heliotrope Gray" hex="9d8ca1" r="157" g="140" b="161" />
+  <color name="Cool Grey" hex="9993b2" r="153" g="147" b="178" />
+  <color name="Maximum Blue Purple" hex="a7abdd" r="167" g="171" b="221" />
+  <color name="Beau Blue" hex="b4d4ee" r="180" g="212" b="238" />
+</palette>

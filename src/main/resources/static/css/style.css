@@ -50,11 +50,10 @@ a {
 
 /* general layout shared by all pages */
 .nav {
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    /*z-index: 10;*/
     background-color: #967aa1;
     color: #f5e6e8;
     height: 150px;
@@ -152,21 +151,21 @@ a {
 
 /* links that do or don't look like buttons */
 .buttonLook {
-    background-color: #EDC7CF;
-    color: #6A8E7F;
+    background-color: #192a51;
+    color: #aaa1c8;
     text-decoration: none;
     text-align: center;
     box-shadow: 1px 1px 1px darkgrey;
 }
 
 .buttonLook:hover {
-    background-color: #6A8E7F;
-    color: #EDC7CF;
+    background-color: #192a51;
+    color: #f5e6e8;
 }
 
 .buttonLook:active {
-    background-color: #6A8E7F;
-    color: #EDC7CF;
+    background-color: #192a51;
+    color: #f5e6e8;
 }
 
 a.largeButton {
@@ -208,18 +207,18 @@ a.menuButton {
 }
 
 a.activeFilter {
-    background-color: #f3a4b4;
-    color: #2b3e35;
+    background-color: #b4d4ee;
+    color: #81717a;
 }
 
 a.linkLook {
     background-color: transparent;
-    color: #6A8E7F;
+    color: #9d8ca1;
 }
 
 a.linkLook:hover {
     background-color: transparent;
-    color: #989572;
+    color: #a7abdd;
 }
 
 /* list page only */
