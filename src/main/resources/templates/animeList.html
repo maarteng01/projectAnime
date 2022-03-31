@@ -10,6 +10,19 @@
 <body>
 <div th:replace="fragments/header :: header">Header</div>
 
+<main>
+    <h2>Anime's</h2>
+    <div class="row1">
+        <div class="row1content">
+            <div th:each="anime : ${animes}">
+                <a class="buttonLook mediumButton" th:href="@{|/animedetails/${anime.getId()}|}">
+                    <span th:text="${anime.getName()}"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
 <div th:replace="fragments/footer :: footer">Footer</div>
 </body>
 </html>
