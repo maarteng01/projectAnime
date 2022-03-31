@@ -15,6 +15,23 @@ public class AuthorController {
     @Autowired
     private AuthorRepository authorRepository;
 
+    @GetMapping("/authorlist")
+    public String authorList(Model model){
+        Iterable<Author> authorsFromDb = authorRepository.findAll();
+        model.addAttribute("authors", authorsFromDb);
+        return "animeList";
+    }
+
+    @GetMapping({"/authordetails", "/authordetails/{id}"})
+    public String authordetails(Model model, @PathVariable(required = false) Integer id){
+        if(id == null) return "authordetails";
+        Optional<Author> authorFromDb = authorRepository.findById(id);
+        if(authorFromDb.isPresent()){
+            model.addAttribute("author", authorFromDb.get());
+        }
+        return "authorDetails";
+    }
+
     @GetMapping({"/authordetails/{id}/prev"})
     public String authordetailsPrev(Model model, @PathVariable int id) {
         Optional<Author> prevAuthorFromDb = authorRepository.findFirstByIdLessThanOrderByIdDesc(id);

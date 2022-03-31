@@ -15,6 +15,23 @@ public class StudioController {
     @Autowired
     private StudioRepository studioRepository;
 
+    @GetMapping("/studiolist")
+    public String studioList(Model model){
+        Iterable<Studio> studiosFromDb = studioRepository.findAll();
+        model.addAttribute("studios", studiosFromDb);
+        return "studioList";
+    }
+
+    @GetMapping({"/studiodetails", "/studiodetails/{id}"})
+    public String studioDetails(Model model, @PathVariable(required = false) Integer id){
+        if(id == null) return "studioDetails";
+        Optional<Studio> studioFromDb = studioRepository.findById(id);
+        if(studioFromDb.isPresent()){
+            model.addAttribute("anime", studioFromDb.get());
+        }
+        return "studioDetails";
+    }
+
     @GetMapping({"/studiodetails/{id}/prev"})
     public String studiodetailsPrev(Model model, @PathVariable int id) {
         Optional<Studio> prevStudioFromDb = studioRepository.findFirstByIdLessThanOrderByIdDesc(id);
