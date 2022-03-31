@@ -16,6 +16,11 @@
     <h2>Anime's</h2>
     <div class="row1">
         <div class="row1content">
+            <div class="filters">
+                <form>
+
+                </form>
+            </div>
             <div th:each="anime : ${animes}">
                 <a class="buttonLook mediumButton" th:href="@{|/animedetails/${anime.getId()}|}">
                     <span th:text="${anime.getName()}"></span>
