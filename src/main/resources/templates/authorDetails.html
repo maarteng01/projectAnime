@@ -13,6 +13,44 @@
 
 <div th:replace="fragments/header :: header">Header</div>
 
+<div class="row1">
+    <div class="row1content" th:if="${author}">
+        <div class="prevButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/authordetails/${author.getId()}/prev|}">prev</a>
+        </div>
+        <div class="nextButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/authordetails/${author.getId()}/next|}">next</a>
+        </div>
+
+        <h2 th:text="|${author.getFirstName()} ${author.getLastName()}|"></h2>
+
+        <div class="partyinfo">
+            <div class="infoline">
+                <div class="infoLineName">First name:</div>
+                <div class="infoLinevalue" th:text="${author.getFirstName()}"></div>
+            </div>
+            <div class="infoline">
+                <div class="infoLineName">Last name:</div>
+                <div class="infoLinevalue" th:text="${author.getLastName()}"></div>
+            </div>
+            <div class="infoline">
+                <div class="infoLineName">Age:</div>
+                <div class="infoLinevalue" th:text="${author.getAge()}"></div>
+            </div>
+        </div>
+    </div>
+    <!--    <div>-->
+    <!--        <h2>line up:</h2>-->
+    <!--        <div th:each="artist : ${party.getArtists()}">-->
+    <!--            <a class="buttonLook mediumButton" th:text="${artist.getArtistName()}" th:href="@{|/artistdetails/${artist.getId()}|}"></a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div class="row1content" th:unless="${author}">
+        <p>No author was chosen</p>
+    </div>
+</div>
+
 <div th:replace="fragments/footer :: footer">Footer</div>
 
 </body>
