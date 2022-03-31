@@ -1,11 +1,56 @@
 package com.example.projectanime.controllers;
 
+import com.example.projectanime.model.Anime;
 import com.example.projectanime.repositories.AnimeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.Optional;
 
 @Controller
 public class AnimeController {
     @Autowired
     private AnimeRepository animeRepository;
+
+    @GetMapping("/animelist")
+    public String animeList(Model model){
+        Iterable<Anime> animesFromDb = animeRepository.findAll();
+        model.addAttribute("animes", animesFromDb);
+        return "animeList";
+    }
+
+    @GetMapping({"/animedetails", "/animedetails/{id}"})
+    public String animedetails(Model model, @PathVariable(required = false) Integer id){
+        if(id == null) return "animeDetails";
+        Optional<Anime> animeFromDb = animeRepository.findById(id);
+        if(animeFromDb.isPresent()){
+            model.addAttribute("anime", animeFromDb.get());
+        }
+        return "animeDetails";
+    }
+
+    @GetMapping({"/animedetails/{id}/prev"})
+    public String animedetailsPrev(Model model, @PathVariable int id) {
+        Optional<Anime> prevAnimeFromDb = animeRepository.findFirstByIdLessThanOrderByIdDesc(id);
+        if (prevAnimeFromDb.isPresent())
+            return String.format("redirect:/animedetails/%d", prevAnimeFromDb.get().getId());
+        Optional<Anime> lastAnimeFromDb = animeRepository.findFirstByOrderByIdDesc();
+        if (lastAnimeFromDb.isPresent())
+            return String.format("redirect:/partydetails/%d", lastAnimeFromDb.get().getId());
+        return "animeDetails";
+    }
+
+    @GetMapping({"/animedetails/{id}/next"})
+    public String animedetailsNext(Model model, @PathVariable int id) {
+        Optional<Anime> nextAnimeFromDb = animeRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
+        if (nextAnimeFromDb.isPresent())
+            return String.format("redirect:/animedetails/%d", nextAnimeFromDb.get().getId());
+        Optional<Anime> firstAnimeFromDb = animeRepository.findFirstByOrderByIdAsc();
+        if (firstAnimeFromDb.isPresent())
+            return String.format("redirect:/animedetails/%d", firstAnimeFromDb.get().getId());
+        return "animeDetails";
+    }
 }
