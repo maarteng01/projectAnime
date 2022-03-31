@@ -18,13 +18,33 @@
         <div class="row1content">
             <div class="filters">
                 <form>
-
+                    <h3>Rating</h3>
+                    <div class="onefilter">
+                        <label for="minRating" class="filtername">min</label>
+                        <input type="number" id="minRating" name="minRating" min="0" max="10" value="0" step="1"> rating
+                    </div>
+                    <div class="onefilter">
+                        <label for="maxRating" class="filtername">max</label>
+                        <input type="number" id="maxRating" name="maxRating" min="0" max="10" value="0" step="1"> rating
+                    </div>
+                    <h3>Name</h3>
+                    <div class="onefilter">
+                        <label for="searchAnime" class="filtername">name</label>
+                        <input type="text" id="searchAnime" name="searchAnime">
+                    </div>
+                    <div class="onefilter">
+                        <input type="submit" class="buttonLook filterButton" value="submit">
+                    </div>
                 </form>
             </div>
-            <div th:each="anime : ${animes}">
-                <a class="buttonLook mediumButton" th:href="@{|/animedetails/${anime.getId()}|}">
-                    <span th:text="${anime.getName()}"></span>
-                </a>
+            <div class="venuelist">
+                <div th:each="anime: ${animes}">
+                    <a class="buttonLook mediumButton"
+                       th:href="@{|/animedetails/${anime.getId()}|}">
+                        <span th:text="${anime.getName()}">anime name </span>
+                        <div th:text="|rating ${anime.getRating()}|" class="venueExtraInfo">rating</div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

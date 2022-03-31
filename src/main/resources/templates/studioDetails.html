@@ -31,12 +31,12 @@
             </div>
         </div>
     </div>
-    <!--    <div>-->
-    <!--        <h2>line up:</h2>-->
-    <!--        <div th:each="artist : ${party.getArtists()}">-->
-    <!--            <a class="buttonLook mediumButton" th:text="${artist.getArtistName()}" th:href="@{|/artistdetails/${artist.getId()}|}"></a>-->
-    <!--        </div>-->
-    <!--    </div>-->
+    <div>
+        <h2>Other anime's produced by this studio:</h2>
+        <div th:each="anime : ${studio.getAnimes()}">
+            <a class="buttonLook mediumButton" th:text="${anime.getName()}" th:href="@{|/animedetails/${anime.getId()}|}"></a>
+        </div>
+    </div>
 
     <div class="row1content" th:unless="${studio}">
         <p>No anime was chosen</p>

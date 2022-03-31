@@ -1,19 +1,26 @@
 package com.example.projectanime.controllers;
 
 import com.example.projectanime.model.Anime;
+import com.example.projectanime.model.Studio;
 import com.example.projectanime.repositories.AnimeRepository;
+import com.example.projectanime.repositories.StudioRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
+
 
 @Controller
 public class AnimeController {
     @Autowired
     private AnimeRepository animeRepository;
+    final private Logger logger = LoggerFactory.getLogger(AnimeController.class);
 
     @GetMapping("/animelist")
     public String animeList(Model model){
@@ -30,6 +37,17 @@ public class AnimeController {
             model.addAttribute("anime", animeFromDb.get());
         }
         return "animeDetails";
+    }
+
+    @GetMapping({"/animelist/filter"})
+    public String animeListWithFilter(Model model,
+                                      @RequestParam(required = false) Integer minRating,
+                                      @RequestParam(required = false) Integer maxRating,
+                                      @RequestParam(required = false) String searchAnime){
+        logger.info(String.format("animeListWithFilter -- min=%d", minRating));
+        Iterable<Anime> animes = animeRepository.findAll();
+        model.addAttribute("animes", animes);
+        return "animeList";
     }
 
     @GetMapping({"/animedetails/{id}/prev"})

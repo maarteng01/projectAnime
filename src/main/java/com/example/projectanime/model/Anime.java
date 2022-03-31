@@ -1,9 +1,7 @@
 package com.example.projectanime.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -55,5 +53,16 @@ public class Anime {
 
     public void setRating(Double rating) {
         this.rating = rating;
+    }
+
+    @ManyToMany(mappedBy = "animes")
+    private Collection<Studio> studios;
+
+    public Collection<Studio> getStudios() {
+        return studios;
+    }
+
+    public void setStudios(Collection<Studio> studios) {
+        this.studios = studios;
     }
 }

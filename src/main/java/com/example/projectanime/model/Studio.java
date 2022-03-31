@@ -1,8 +1,7 @@
 package com.example.projectanime.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Studio {
@@ -11,6 +10,8 @@ public class Studio {
     private String name;
     @Column(length = 500)
     private String bio;
+    @ManyToMany(fetch = FetchType.LAZY)
+    private Collection<Anime> animes;
 
     public Integer getId() {
         return id;
@@ -34,5 +35,13 @@ public class Studio {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public Collection<Anime> getAnimes() {
+        return animes;
+    }
+
+    public void setAnimes(Collection<Anime> animes) {
+        this.animes = animes;
     }
 }
