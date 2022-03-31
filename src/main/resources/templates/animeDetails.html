@@ -31,7 +31,7 @@
             </div>
             <div class="infoline">
                 <div class="infoLineName">Finished airing:</div>
-                <div class="infoLinevalue" th:text="${anime.getEndDate()}"></div>
+                <div class="infoLinevalue" th:text="(${anime.getEndDate()} != null) ? ${anime.getEndDate()}:'still airing'"></div>
             </div>
             <div class="infoline">
                 <div class="infoLineName">Rating:</div>
