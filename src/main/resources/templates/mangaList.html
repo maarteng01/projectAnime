@@ -11,6 +11,19 @@
 
 <div th:replace="fragments/header :: header">Header</div>
 
+<main>
+    <h2>Mangas</h2>
+    <div class="row1">
+        <div class="row1content">
+            <div th:each="manga : ${mangas}">
+                <a class="buttonLook mediumButton" th:href="@{|/mangadetails/${manga.getId()}|}">
+                    <span th:text="${manga.getName()}"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
 <div th:replace="fragments/footer :: footer">Footer</div>
 
 </body>
