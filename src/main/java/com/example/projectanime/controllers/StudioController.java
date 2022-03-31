@@ -27,7 +27,7 @@ public class StudioController {
         if(id == null) return "studioDetails";
         Optional<Studio> studioFromDb = studioRepository.findById(id);
         if(studioFromDb.isPresent()){
-            model.addAttribute("anime", studioFromDb.get());
+            model.addAttribute("studio", studioFromDb.get());
         }
         return "studioDetails";
     }

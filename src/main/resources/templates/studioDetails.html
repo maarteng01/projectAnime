@@ -13,6 +13,36 @@
 
 <div th:replace="fragments/header :: header">Header</div>
 
+<div class="row1">
+    <div class="row1content" th:if="${studio}">
+        <div class="prevButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/studiodetails/${studio.getId()}/prev|}">prev</a>
+        </div>
+        <div class="nextButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/studiodetails/${studio.getId()}/next|}">next</a>
+        </div>
+
+        <h2 th:text="${studio.getName()}"></h2>
+
+        <div class="partyinfo">
+            <div class="infoline">
+                <div class="infoLineName" th:text="|about ${studio.getName()}:|"></div>
+                <div class="infoLinevalue" th:text="${studio.getBio()}"></div>
+            </div>
+        </div>
+    </div>
+    <!--    <div>-->
+    <!--        <h2>line up:</h2>-->
+    <!--        <div th:each="artist : ${party.getArtists()}">-->
+    <!--            <a class="buttonLook mediumButton" th:text="${artist.getArtistName()}" th:href="@{|/artistdetails/${artist.getId()}|}"></a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <div class="row1content" th:unless="${studio}">
+        <p>No anime was chosen</p>
+    </div>
+</div>
+
 <div th:replace="fragments/footer :: footer">Footer</div>
 
 </body>
