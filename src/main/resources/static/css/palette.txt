@@ -1,0 +1,25 @@
+/* Coolors Exported Palette - https://coolors.co/f5e6e8-d5c6e0-aaa1c8-967aa1-192a51 */
+
+/* CSV */
+f5e6e8,d5c6e0,aaa1c8,967aa1,192a51
+
+/* With # */
+#f5e6e8, #d5c6e0, #aaa1c8, #967aa1, #192a51
+
+/* Array */
+["f5e6e8","d5c6e0","aaa1c8","967aa1","192a51"]
+
+/* Object */
+{"Lavender Blush":"f5e6e8","Languid Lavender":"d5c6e0","Blue Bell":"aaa1c8","Purple Mountain Majesty":"967aa1","Space Cadet":"192a51"}
+
+/* Extended Array */
+[{"name":"Lavender Blush","hex":"f5e6e8","rgb":[245,230,232],"cmyk":[0,6,5,4],"hsb":[352,6,96],"hsl":[352,43,93],"lab":[93,5,1]},{"name":"Languid Lavender","hex":"d5c6e0","rgb":[213,198,224],"cmyk":[5,12,0,12],"hsb":[275,12,88],"hsl":[275,30,83],"lab":[82,10,-11]},{"name":"Blue Bell","hex":"aaa1c8","rgb":[170,161,200],"cmyk":[15,20,0,22],"hsb":[254,20,78],"hsl":[254,26,71],"lab":[68,11,-19]},{"name":"Purple Mountain Majesty","hex":"967aa1","rgb":[150,122,161],"cmyk":[7,24,0,37],"hsb":[283,24,63],"hsl":[283,17,55],"lab":[55,18,-17]},{"name":"Space Cadet","hex":"192a51","rgb":[25,42,81],"cmyk":[69,48,0,68],"hsb":[222,69,32],"hsl":[222,53,21],"lab":[18,7,-26]}]
+
+/* XML */
+<palette>
+  <color name="Lavender Blush" hex="f5e6e8" r="245" g="230" b="232" />
+  <color name="Languid Lavender" hex="d5c6e0" r="213" g="198" b="224" />
+  <color name="Blue Bell" hex="aaa1c8" r="170" g="161" b="200" />
+  <color name="Purple Mountain Majesty" hex="967aa1" r="150" g="122" b="161" />
+  <color name="Space Cadet" hex="192a51" r="25" g="42" b="81" />
+</palette>
