@@ -11,6 +11,19 @@
 
 <div th:replace="fragments/header :: header">Header</div>
 
+<main>
+    <h2>Studios</h2>
+    <div class="row1">
+        <div class="row1content">
+            <div th:each="studio : ${studios}">
+                <a class="buttonLook mediumButton" th:href="@{|/studiodetails/${studio.getId()}|}">
+                    <span th:text="${studio.getName()}"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
 <div th:replace="fragments/footer :: footer">Footer</div>
 
 </body>
