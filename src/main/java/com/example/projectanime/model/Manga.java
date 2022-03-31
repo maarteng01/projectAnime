@@ -2,6 +2,8 @@ package com.example.projectanime.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 @Entity
@@ -9,7 +11,9 @@ public class Manga {
     @Id
     private Integer id;
     private String name;
+    @Temporal(TemporalType.DATE)
     private Date releaseDate;
+    @Temporal(TemporalType.DATE)
     private Date endDate;
 
     public Integer getId() {

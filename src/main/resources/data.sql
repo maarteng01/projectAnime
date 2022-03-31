@@ -1,5 +1,5 @@
 INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (1, 'Attack On Titan', '2013-04-07', null, 8.53);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (2, 'The misfit of demon king academy', '2020-07-04', '2020-09-26', 7.37);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (2, 'The Misfit Of Demon King Academy', '2020-07-04', '2020-09-26', 7.37);
 INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (3, 'Grand Blue', '2018-07-14', '2018-09-29', 8.43);
 INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (4, 'Tokyo Ghoul', '2014-07-04', '2018-12-25', 7.80);
 INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (5, 'My Dress-Up Darling', '2022-01-09', '2022-03-27', 8.46);
@@ -19,3 +19,14 @@ INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (7, 'Eiichiro', 'Oda'
 INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (8, 'Nagatsuki', 'Tappei', 35);
 INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (9, 'Nakaba', 'Suzuki', 45);
 INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (10, 'Yonje', 'Park', 40);
+
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (1, 'Attack On Titan', '2009-09-09', '2021-04-09');
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (2, 'The Misfit Of Demon King Academy', '2018-11-10', '2021-03-05');
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (3, 'Grand Blue', '2014-04-07', '2022-03-07');
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (4, 'Tokyo Ghoul', '2011-09-08', '2018-07-05');
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (5, 'My Dress-Up Darling', '2018-11-24', '2022-03-25');
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (6, 'Naruto', '1999-09-21', '2014-11-10');
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (7, 'One Piece', '1997-07-19', null);
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (8, 'Re:ZERO -starting life in another world-', '2014-10-23', '2017-07-23');
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (9, 'The Seven Deadly Sins', '2012-10-10', '2020-03-25');
+INSERT INTO MANGA (id, name, release_date, end_date) VALUES (10, 'The God of High School', '2021-04-08', null);
