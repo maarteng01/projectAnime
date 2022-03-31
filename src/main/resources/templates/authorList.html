@@ -11,6 +11,19 @@
 
 <div th:replace="fragments/header :: header">Header</div>
 
+<main>
+    <h2>Authors</h2>
+    <div class="row1">
+        <div class="row1content">
+            <div th:each="author : ${authors}">
+                <a class="buttonLook mediumButton" th:href="@{|/authordetails/${author.getId()}|}">
+                    <span th:text="|${author.getFirstName()} ${author.getLastName()}|"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
 <div th:replace="fragments/footer :: footer">Footer</div>
 
 </body>

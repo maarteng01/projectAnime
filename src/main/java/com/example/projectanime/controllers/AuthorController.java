@@ -19,7 +19,7 @@ public class AuthorController {
     public String authorList(Model model){
         Iterable<Author> authorsFromDb = authorRepository.findAll();
         model.addAttribute("authors", authorsFromDb);
-        return "animeList";
+        return "authorList";
     }
 
     @GetMapping({"/authordetails", "/authordetails/{id}"})
