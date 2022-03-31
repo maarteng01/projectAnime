@@ -11,7 +11,6 @@ public class Author {
     private Integer id;
     private String firstName;
     private String lastName;
-    private Date birthDate;
     private int age;
 
     public Integer getId() {
@@ -36,14 +35,6 @@ public class Author {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
     }
 
     public int getAge() {

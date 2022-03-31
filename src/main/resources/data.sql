@@ -8,3 +8,14 @@ INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (7, 'One Pie
 INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (8, 'Re:ZERO -starting life in another world-', '2016-04-04', '2021-04-24', 8.25);
 INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (9, 'The Seven Deadly Sins', '2014-10-05', '2021-06-23', 7.72);
 INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (10, 'The God of High School', '2020-07-06', '2020-09-28', 7.07);
+
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (1, 'Hajime', 'Isayama', 35);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (2, 'Kaya', 'Haruka', 42);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (3, 'Kenji', 'Inoue', 0);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (4, 'Sui', 'Ishida', 35);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (5, 'Shinichi', 'Fukuda', 0);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (6, 'Masashi', 'Kishimoto', 47);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (7, 'Eiichiro', 'Oda', 47);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (8, 'Nagatsuki', 'Tappei', 35);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (9, 'Nakaba', 'Suzuki', 45);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (10, 'Yonje', 'Park', 40);
