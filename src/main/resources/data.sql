@@ -1,15 +1,15 @@
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (1, 'Attack On Titan', '2013-04-07', null, 8.53);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (2, 'The Misfit Of Demon King Academy', '2020-07-04', '2020-09-26', 7.37);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (3, 'Grand Blue', '2018-07-14', '2018-09-29', 8.43);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (4, 'Tokyo Ghoul', '2014-07-04', '2018-12-25', 7.80);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (5, 'My Dress-Up Darling', '2022-01-09', '2022-03-27', 8.46);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (6, 'Naruto', '2002-10-03', '2007-02-08', 7.97);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (7, 'One Piece', '1999-10-02', null, 8.63);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (8, 'Re:ZERO -starting life in another world-', '2016-04-04', '2021-04-24', 8.25);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (9, 'The Seven Deadly Sins', '2014-10-05', '2021-06-23', 7.72);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (10, 'The God of High School', '2020-07-06', '2020-09-28', 7.07);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (11, 'Baka and Test', '2010-01-07', '2010-04-01', 7.55);
-INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (12, 'Noblesse', '2016-02-04', '2020-12-31', 6.86);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'Attack On Titan', '2013-04-07', null, 8.53);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'The Misfit Of Demon King Academy', '2020-07-04', '2020-09-26', 7.37);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'Grand Blue', '2018-07-14', '2018-09-29', 8.43);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'Tokyo Ghoul', '2014-07-04', '2018-12-25', 7.80);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'My Dress-Up Darling', '2022-01-09', '2022-03-27', 8.46);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'Naruto', '2002-10-03', '2007-02-08', 7.97);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'One Piece', '1999-10-02', null, 8.63);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'Re:ZERO -starting life in another world-', '2016-04-04', '2021-04-24', 8.25);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'The Seven Deadly Sins', '2014-10-05', '2021-06-23', 7.72);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'The God of High School', '2020-07-06', '2020-09-28', 7.07);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'Baka and Test', '2010-01-07', '2010-04-01', 7.55);
+INSERT INTO ANIME (id, name, airings_date, end_date, rating) VALUES (nextval('ANIME_SEQ'), 'Noblesse', '2016-02-04', '2020-12-31', 6.86);
 
 INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (1, 'Hajime', 'Isayama', 35);
 INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (2, 'Kaya', 'Haruka', 42);

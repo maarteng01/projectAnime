@@ -8,6 +8,8 @@ import java.util.Date;
 
 @Entity
 public class Anime {
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "anime_generator")
+    @SequenceGenerator(name = "anime_generator", sequenceName = "anime_seq", allocationSize = 1)
     @Id
     private Integer id;
     private String name;

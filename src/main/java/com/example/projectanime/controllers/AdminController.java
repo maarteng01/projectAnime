@@ -36,7 +36,7 @@ public class AdminController {
     }
 
     @PostMapping("animeedit/{id}")
-    public String editAnimePost(Model model, @PathVariable int id, @ModelAttribute("anime") Anime anime){
+    public String editAnimePost(Model model, @PathVariable Integer id, @ModelAttribute("anime") Anime anime){
         Optional<Anime> optionalAnime = animeRepository.findById(id);
         if (optionalAnime.isPresent()){
             Anime editedAnime = optionalAnime.get();
@@ -47,4 +47,21 @@ public class AdminController {
         }
         return "redirect:/animedetails/" + id;
     }
+
+    @GetMapping("/newanime")
+    public String newAnime(Model model){
+        Iterable<Studio> studios = studioRepository.findAll();
+        model.addAttribute("studios", studios);
+        return "newAnime";
+    }
+
+//    @ModelAttribute("anime")
+//    public Anime findAnime(@PathVariable(required = false) Integer id){
+//        logger.info("findAnime " + id);
+//        Optional<Anime> optionalAnime = animeRepository.findById(id);
+//        if(optionalAnime.isPresent()){
+//            return optionalAnime.get();
+//        }
+//        return null;
+//    }
 }

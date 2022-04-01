@@ -10,6 +10,43 @@
     <title>Add new anime</title>
 </head>
 <body>
+<div th:replace="fragments/header :: header">Header</div>
 
+<div class="row1">
+    <div class="row1content" th:if="${anime}" th:object="${anime}">
+
+        <h2 th:text="${anime.getName()}"></h2>
+        <form th:action="@{|/admin/newanime|}" method="post">
+            <div class="partyinfo">
+                <div class="infoline">
+                    <label for="animeName">name:</label>
+                    <input id="animeName" th:field="*{name}">
+                </div>
+                <div class="infoline">
+                    <label for="animeEndDate">End date:</label>
+                    <input id="animeEndDate" th:field="*{endDate}" placeholder="yyyy-MM-DD">
+                </div>
+                <div class="infoline">
+                    <label for="animeRating">Rating</label>
+                    <input id="animeRating"th:field="*{rating}" min="0" max="10" step="any">
+                </div>
+                <input type="submit" value="Create">
+            </div>
+        </form>
+        <a class="buttonLook mediumButton" th:href="@{|/animedetails/${anime.getId()}|}">Cancel</a>
+    </div>
+    <div>
+        <h2>Produced by:</h2>
+        <div th:each="studio : ${anime.getStudios()}">
+            <a class="buttonLook mediumButton" th:text="${studio.getName()}" th:href="@{|/studiodetails/${studio.getId()}|}"></a>
+        </div>
+    </div>
+
+    <div class="row1content" th:unless="${anime}">
+        <p>No anime was chosen</p>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer">Footer</div>
 </body>
 </html>
