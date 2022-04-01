@@ -14,6 +14,8 @@ public class Manga {
     private Date endDate;
     @ManyToOne(fetch = FetchType.LAZY)
     private Author author;
+    @OneToOne(mappedBy = "manga")
+    private Anime anime;
 
     public Integer getId() {
         return id;

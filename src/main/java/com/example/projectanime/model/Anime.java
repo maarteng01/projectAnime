@@ -11,6 +11,7 @@ public class Anime {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "anime_generator")
     @SequenceGenerator(name = "anime_generator", sequenceName = "anime_seq", allocationSize = 1)
     @Id
+    @Column(name = "id")
     private Integer id;
     private String name;
     @Temporal(TemporalType.DATE)
@@ -19,6 +20,9 @@ public class Anime {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
     private Double rating;
+    @OneToOne
+    @JoinColumn(name = "manga_id", referencedColumnName = "id")
+    private Manga manga;
 
     public Integer getId() {
         return id;
