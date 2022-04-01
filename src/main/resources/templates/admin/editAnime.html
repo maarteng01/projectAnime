@@ -7,38 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="css/style.css">
     <link rel="stylesheet" th:href="@{/css/style.css}" href="css/style.css">
-    <title>Anime Details</title>
+    <title>Edit anime</title>
 </head>
 <body>
-
 <div th:replace="fragments/header :: header">Header</div>
 
 <div class="row1">
-    <div class="row1content" th:if="${anime}">
-        <div class="prevButtonDiv">
-            <a class="buttonLook smallButton" th:href="@{|/animedetails/${anime.getId()}/prev|}">prev</a>
-        </div>
-        <div class="nextButtonDiv">
-            <a class="buttonLook smallButton" th:href="@{|/animedetails/${anime.getId()}/next|}">next</a>
-        </div>
+    <div class="row1content" th:if="${anime}" th:object="${anime}">
 
         <h2 th:text="${anime.getName()}"></h2>
-
+    <form th:action="@{|/admin/animeedit/${anime.getId()}|}" method="post">
         <div class="partyinfo">
             <div class="infoline">
-                <div class="infoLineName">First aired:</div>
-                <div class="infoLinevalue" th:text="${anime.getAiringsDate()}"></div>
+                <label for="animeName">name:</label>
+                <input id="animeName" th:field="*{name}">
             </div>
             <div class="infoline">
-                <div class="infoLineName">Finished airing:</div>
-                <div class="infoLinevalue" th:text="(${anime.getEndDate()} != null) ? ${anime.getEndDate()}:'still airing'"></div>
+                <label for="animeEndDate">End date:</label>
+                <input id="animeEndDate" th:field="*{endDate}" placeholder="yyyy-MM-DD">
             </div>
             <div class="infoline">
-                <div class="infoLineName">Rating:</div>
-                <div class="infoLinevalue" th:text="${anime.getRating()}"></div>
+                <label for="animeRating">Rating</label>
+                <input id="animeRating"th:field="*{rating}" min="0" max="10" step="any">
             </div>
+            <input type="submit" value="Save">
         </div>
-        <a class="buttonLook mediumButton" th:href="@{|/admin/animeedit/${anime.getId()}|}">Edit</a>
+    </form>
+        <a class="buttonLook mediumButton" th:href="@{|/animedetails/${anime.getId()}|}">Cancel</a>
     </div>
     <div>
         <h2>Produced by:</h2>

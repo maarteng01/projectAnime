@@ -1,5 +1,7 @@
 package com.example.projectanime.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
@@ -12,6 +14,7 @@ public class Anime {
     @Temporal(TemporalType.DATE)
     private Date airingsDate;
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
     private Double rating;
 
