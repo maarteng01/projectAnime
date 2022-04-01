@@ -11,8 +11,9 @@ import java.util.Optional;
 public interface AnimeRepository extends CrudRepository<Anime, Integer> {
        @Query("SELECT an FROM Anime an WHERE " +
                "(:minRating IS NULL OR :minRating <= an.rating) AND " +
-               "(:maxRating IS NULL OR an.rating <= :maxRating)")
-               List<Anime> findByFilter(@Param("minRating") Integer minRating,@Param("maxRating") Integer maxRating);
+               "(:maxRating IS NULL OR an.rating <= :maxRating) and" +
+               "(:searchAnime is null or upper(an.name) like upper(concat('%',:searchAnime,'%')))")
+               List<Anime> findByFilter(@Param("minRating") Double minRating,@Param("maxRating") Double maxRating, @Param("searchAnime") String searchAnime);
 
     Optional<Anime> findFirstByIdLessThanOrderByIdDesc(Integer id);
     Optional<Anime> findFirstByOrderByIdDesc();

@@ -24,9 +24,14 @@ public class AnimeController {
     final private Logger logger = LoggerFactory.getLogger(AnimeController.class);
 
     @GetMapping("/animelist")
-    public String animeList(Model model){
-        Iterable<Anime> animesFromDb = animeRepository.findAll();
-        model.addAttribute("animes", animesFromDb);
+    public String animeList(Model model, @RequestParam(required = false) Double minRating,
+                            @RequestParam(required = false) Double maxRating,
+                            @RequestParam(required = false) String searchAnime){
+
+        // Filter wordt opgeroepen om alle animes te vinden, BEHALVE als de filter een null mee krijgt als filter waarde.
+        Iterable<Anime> animes = animeRepository.findByFilter(minRating,maxRating, searchAnime);
+
+        model.addAttribute("animes", animes);
         return "animeList";
     }
 
