@@ -1,7 +1,9 @@
 package com.example.projectanime.controllers;
 
 import com.example.projectanime.model.Author;
+import com.example.projectanime.model.Manga;
 import com.example.projectanime.repositories.AuthorRepository;
+import com.example.projectanime.repositories.MangaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,8 @@ import java.util.Optional;
 public class AuthorController {
     @Autowired
     private AuthorRepository authorRepository;
+    @Autowired
+    private MangaRepository mangaRepository;
 
     @GetMapping("/authorlist")
     public String authorList(Model model){
@@ -28,6 +32,8 @@ public class AuthorController {
         Optional<Author> authorFromDb = authorRepository.findById(id);
         if(authorFromDb.isPresent()){
             model.addAttribute("author", authorFromDb.get());
+            Iterable<Manga> mangas = mangaRepository.findByAuthor(authorFromDb.get());
+            model.addAttribute("mangas", mangas);
         }
         return "authorDetails";
     }

@@ -38,6 +38,12 @@
                 <div class="infoLinevalue" th:text="${author.getAge()}"></div>
             </div>
         </div>
+        <div>
+            <h2 th:text="|Works from ${author.getFirstName()} ${author.getLastName()}|"></h2>
+            <div th:each="manga : ${mangas}">
+                <a class="buttonlook mediumButton" th:href="@{|/mangadetails/${manga.getId()}|}" th:text="${manga.getName()}"></a>
+            </div>
+        </div>
     </div>
     <!--    <div>-->
     <!--        <h2>line up:</h2>-->

@@ -1,9 +1,6 @@
 package com.example.projectanime.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -15,6 +12,8 @@ public class Manga {
     private Date releaseDate;
     @Temporal(TemporalType.DATE)
     private Date endDate;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Author author;
 
     public Integer getId() {
         return id;
@@ -46,5 +45,13 @@ public class Manga {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.projectanime.repositories;
 
+import com.example.projectanime.model.Author;
 import com.example.projectanime.model.Manga;
 import org.springframework.data.repository.CrudRepository;
 
@@ -10,4 +11,6 @@ public interface MangaRepository extends CrudRepository<Manga, Integer> {
     Optional<Manga> findFirstByOrderByIdDesc();
     Optional<Manga> findFirstByIdGreaterThanOrderByIdAsc(Integer id);
     Optional<Manga> findFirstByOrderByIdAsc();
+
+    Iterable<Manga> findByAuthor(Author author);
 }

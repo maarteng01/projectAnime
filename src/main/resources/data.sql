@@ -21,19 +21,20 @@ INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (7, 'Eiichiro', 'Oda'
 INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (8, 'Nagatsuki', 'Tappei', 35);
 INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (9, 'Nakaba', 'Suzuki', 45);
 INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (10, 'Yonje', 'Park', 40);
+INSERT INTO AUTHOR (id, first_name, last_name, age) VALUES (11, 'Lee', 'Gwang-Su', 37);
 
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (1, 'Attack On Titan', '2009-09-09', '2021-04-09');
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (2, 'The Misfit Of Demon King Academy', '2018-11-10', '2021-03-05');
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (3, 'Grand Blue', '2014-04-07', '2022-03-07');
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (4, 'Tokyo Ghoul', '2011-09-08', '2018-07-05');
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (5, 'My Dress-Up Darling', '2018-11-24', '2022-03-25');
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (6, 'Naruto', '1999-09-21', '2014-11-10');
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (7, 'One Piece', '1997-07-19', null);
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (8, 'Re:ZERO -starting life in another world-', '2014-10-23', '2017-07-23');
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (9, 'The Seven Deadly Sins', '2012-10-10', '2020-03-25');
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (10, 'The God of High School', '2021-04-08', null);
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (11, 'Hunter x Hunter: Hisoka origin story', '2016-06-02', '2016-06-02');
-INSERT INTO MANGA (id, name, release_date, end_date) VALUES (12, 'Noblesse', '2007-12-30', '2019-01-07');
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (1, 'Attack On Titan', '2009-09-09', '2021-04-09', 1);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (2, 'The Misfit Of Demon King Academy', '2018-11-10', '2021-03-05', 2);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (3, 'Grand Blue', '2014-04-07', '2022-03-07', 3);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (4, 'Tokyo Ghoul', '2011-09-08', '2018-07-05', 4);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (5, 'My Dress-Up Darling', '2018-11-24', '2022-03-25', 5);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (6, 'Naruto', '1999-09-21', '2014-11-10', 6);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (7, 'One Piece', '1997-07-19', null, 7);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (8, 'Re:ZERO -starting life in another world-', '2014-10-23', '2017-07-23', 8);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (9, 'The Seven Deadly Sins', '2012-10-10', '2020-03-25', 9);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (10, 'The God of High School', '2021-04-08', null, 10);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (11, 'Hunter x Hunter: Hisoka origin story', '2016-06-02', '2016-06-02', 4);
+INSERT INTO MANGA (id, name, release_date, end_date, author_id) VALUES (12, 'Noblesse', '2007-12-30', '2019-01-07', 11);
 
 INSERT INTO STUDIO (id, name, bio) VALUES (1, 'Wit Studio', 'Wit Studio, Inc. is a Japanese animation studio founded on June 1, 2012, by producers at Production I.G as a subsidiary of IG Port. It is headquartered in Musashino, Tokyo, with Production I.G producer George Wada as president and Tetsuya Nakatake, also a producer at Production I.G., as a director of the studio. The studio gained notability for producing the first three seasons of Attack on Titan.');
 INSERT INTO STUDIO (id, name, bio) VALUES (2, 'MAPPA', 'MAPPA Co., Ltd. is a Japanese animation studio headquartered in Suginami, Tokyo. Founded in 2011 by Madhouse co-founder and producer Masao Maruyama, it has produced anime works including Kids on the Slope, Terror in Resonance, Yuri!!! on Ice, In This Corner of the World, Zombieland Saga, Dororo, Jujutsu Kaisen, and Attack on Titan: The Final Season. "MAPPA" is an acronym for (Maruyama Animation Produce Project Association).');
