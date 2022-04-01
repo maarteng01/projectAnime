@@ -40,16 +40,7 @@ public class AnimeController {
         return "animeDetails";
     }
 
-    @GetMapping({"/animelist/filter"})
-    public String animeListWithFilter(Model model,
-                                      @RequestParam(required = false) Integer minRating,
-                                      @RequestParam(required = false) Integer maxRating,
-                                      @RequestParam(required = false) String searchAnime){
-        logger.info(String.format("animeListWithFilter -- min=%d", minRating));
-        Iterable<Anime> animes = animeRepository.findAll();
-        model.addAttribute("animes", animes);
-        return "animeList";
-    }
+
 
     @GetMapping({"/animedetails/{id}/prev"})
     public String animedetailsPrev(Model model, @PathVariable int id) {
